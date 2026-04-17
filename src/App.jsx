@@ -56,80 +56,80 @@ const THEMES = {
 // ═══════════════════════════════════════════════════════════════════════════════
 const MODEL_PROVIDERS = {
   deepseek: {
-    id: 'deepseek',
     name: 'DeepSeek',
     icon: '🔵',
+    color: '#346cla',
     defaultUrl: 'https://api.deepseek.com/v1',
+    endpoint: '/chat/completions',
     models: [
-      { id: 'deepseek-chat', name: 'DeepSeek Chat (V3)' },
-      { id: 'deepseek-coder', name: 'DeepSeek Coder' },
-      { id: 'deepseek-reasoner', name: 'DeepSeek Reasoner (R1)' },
+      { id: 'deepseek-chat', name: 'DeepSeek Chat', desc: '通用对话模型' },
+      { id: 'deepseek-coder', name: 'DeepSeek Coder', desc: '代码专用模型' },
     ],
-    color: '#0066cc',
   },
   minimax: {
-    id: 'minimax',
     name: 'MiniMax',
     icon: '🟠',
+    color: '#ff6b35',
     defaultUrl: 'https://api.minimax.chat/v1',
+    endpoint: '/text/chatcompletion_v2',
     models: [
-      { id: 'MiniMax-Text-01', name: 'MiniMax Text 01' },
-      { id: 'abab6.5s-chat', name: 'ABAB 6.5S Chat' },
-      { id: 'abab6-chat', name: 'ABAB 6 Chat' },
+      { id: 'abab6.5s', name: 'ABAB6.5s', desc: '245k上下文 · 通用场景' },
+      { id: 'abab6.5t', name: 'ABAB6.5t', desc: '8k上下文 · AI陪伴' },
+      { id: 'abab6.5g', name: 'ABAB6.5g', desc: '8k上下文 · 英文陪伴' },
+      { id: 'abab7-preview', name: 'ABAB7 Preview', desc: '最新旗舰' },
     ],
-    color: '#ff6b00',
   },
   siliconflow: {
-    id: 'siliconflow',
     name: '硅基流动',
     icon: '💧',
-    defaultUrl: 'https://api.siliconflow.cn/v1',
-    models: [
-      { id: 'Qwen/Qwen2.5-7B-Instruct', name: 'Qwen 2.5 7B' },
-      { id: 'Qwen/Qwen2.5-14B-Instruct', name: 'Qwen 2.5 14B' },
-      { id: 'deepseek-ai/DeepSeek-V2.5', name: 'DeepSeek V2.5' },
-      { id: 'THUDM/glm-4-9b-chat', name: 'GLM-4 9B' },
-      { id: 'internlm/internlm2_5-7b-chat', name: 'InternLM 2.5 7B' },
-    ],
     color: '#00d4aa',
+    defaultUrl: 'https://api.siliconflow.cn/v1',
+    endpoint: '/chat/completions',
+    models: [
+      { id: 'Qwen/Qwen2.5-72B-Instruct', name: 'Qwen2.5-72B', desc: '旗舰模型' },
+      { id: 'Qwen/Qwen2.5-14B-Instruct', name: 'Qwen2.5-14B', desc: '更强推理' },
+      { id: 'Qwen/Qwen2.5-7B-Instruct', name: 'Qwen2.5-7B', desc: '通识对话' },
+      { id: 'deepseek-ai/DeepSeek-V2.5', name: 'DeepSeek-V2.5', desc: '最新融合模型' },
+      { id: 'THUDM/glm-4-9b-chat', name: 'GLM-4-9B', desc: '智谱4代9B' },
+      { id: 'meta-llama/Llama-3.1-70B-Instruct', name: 'Llama-3.1-70B', desc: 'Meta 3.1 70B' },
+    ],
   },
   dashscope: {
-    id: 'dashscope',
     name: '阿里通义',
     icon: '🔶',
-    defaultUrl: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-    models: [
-      { id: 'qwen-turbo', name: 'Qwen Turbo (快速)' },
-      { id: 'qwen-plus', name: 'Qwen Plus (增强)' },
-      { id: 'qwen-max', name: 'Qwen Max (最强)' },
-      { id: 'qwen-max-long', name: 'Qwen Max Long (长文本)' },
-    ],
     color: '#ff6a00',
+    defaultUrl: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+    endpoint: '/chat/completions',
+    models: [
+      { id: 'qwen-turbo', name: 'Qwen Turbo', desc: '快速版' },
+      { id: 'qwen-plus', name: 'Qwen Plus', desc: '增强版' },
+      { id: 'qwen-max', name: 'Qwen Max', desc: '最强版' },
+    ],
   },
   openai: {
-    id: 'openai',
     name: 'OpenAI',
     icon: '⚫',
-    defaultUrl: 'https://api.openai.com/v1',
-    models: [
-      { id: 'gpt-4o', name: 'GPT-4o' },
-      { id: 'gpt-4o-mini', name: 'GPT-4o Mini' },
-      { id: 'gpt-4-turbo', name: 'GPT-4 Turbo' },
-      { id: 'gpt-3.5-turbo', name: 'GPT-3.5 Turbo' },
-    ],
     color: '#10a37f',
+    defaultUrl: 'https://api.openai.com/v1',
+    endpoint: '/chat/completions',
+    models: [
+      { id: 'gpt-4o', name: 'GPT-4o', desc: '最新旗舰' },
+      { id: 'gpt-4o-mini', name: 'GPT-4o Mini', desc: '轻量快速' },
+      { id: 'gpt-4-turbo', name: 'GPT-4 Turbo', desc: 'Turbo版' },
+      { id: 'gpt-3.5-turbo', name: 'GPT-3.5 Turbo', desc: '经典模型' },
+    ],
   },
   anthropic: {
-    id: 'anthropic',
     name: 'Anthropic',
     icon: '🟤',
-    defaultUrl: 'https://api.anthropic.com/v1',
-    models: [
-      { id: 'claude-sonnet-4-20250514', name: 'Claude Sonnet 4' },
-      { id: 'claude-opus-4-20250514', name: 'Claude Opus 4' },
-      { id: 'claude-haiku-4-20250514', name: 'Claude Haiku 4' },
-    ],
     color: '#d4a574',
+    defaultUrl: 'https://api.anthropic.com/v1',
+    endpoint: '/messages',
+    models: [
+      { id: 'claude-sonnet-4-20250514', name: 'Claude Sonnet 4', desc: '均衡智能' },
+      { id: 'claude-opus-4-20250514', name: 'Claude Opus 4', desc: '最强推理' },
+      { id: 'claude-haiku-4-20250514', name: 'Claude Haiku 4', desc: '快速响应' },
+    ],
   },
 };
 
@@ -378,6 +378,12 @@ function loadUserProgressList(userId) {
 // ═══════════════════════════════════════════════════════════════════════════════
 // API CALL ADAPTERS
 // ═══════════════════════════════════════════════════════════════════════════════
+function getEndpoint(providerId) {
+  const provider = MODEL_PROVIDERS[providerId];
+  if (!provider) return '/chat/completions';
+  return provider.endpoint || '/chat/completions';
+}
+
 async function callModelAPI(provider, config, messages, system) {
   const { apiKey, url, model } = config;
 
@@ -385,88 +391,31 @@ async function callModelAPI(provider, config, messages, system) {
     throw new Error('请先配置 API Key');
   }
 
+  if (!model) {
+    throw new Error('请先选择模型');
+  }
+
+  const providerConfig = MODEL_PROVIDERS[provider] || {};
+  const baseUrl = url || providerConfig.defaultUrl || '';
+  const endpoint = getEndpoint(provider);
+
+  let fullUrl = baseUrl;
+  if (!fullUrl.endsWith('/') && !endpoint.startsWith('/')) {
+    fullUrl += '/';
+  }
+  fullUrl += endpoint;
+
   const headers = {
     'Content-Type': 'application/json',
   };
 
   let body = {};
-  let endpoint = url.endsWith('/') ? url : url + '/';
+  const messagesWithSystem = system ? [{ role: 'system', content: system }, ...messages] : messages;
 
   switch (provider) {
-    case 'deepseek':
-      headers['Authorization'] = `Bearer ${apiKey}`;
-      endpoint += 'chat/completions';
-      body = {
-        model: model,
-        messages: [
-          ...(system ? [{ role: 'system', content: system }] : []),
-          ...messages,
-        ],
-        max_tokens: 1000,
-        temperature: 0.7,
-      };
-      break;
-
-    case 'minimax':
-      headers['Authorization'] = `Bearer ${apiKey}`;
-      endpoint += 'text/chatcompletion_v2';
-      body = {
-        model: model,
-        messages: [
-          ...(system ? [{ role: 'system', content: system }] : []),
-          ...messages,
-        ],
-        max_tokens: 1024,
-        temperature: 0.7,
-      };
-      break;
-
-    case 'siliconflow':
-      headers['Authorization'] = `Bearer ${apiKey}`;
-      endpoint += 'chat/completions';
-      body = {
-        model: model,
-        messages: [
-          ...(system ? [{ role: 'system', content: system }] : []),
-          ...messages,
-        ],
-        max_tokens: 1000,
-        temperature: 0.7,
-      };
-      break;
-
-    case 'dashscope':
-      headers['Authorization'] = `Bearer ${apiKey}`;
-      endpoint += 'chat/completions';
-      body = {
-        model: model,
-        messages: [
-          ...(system ? [{ role: 'system', content: system }] : []),
-          ...messages,
-        ],
-        max_tokens: 1000,
-        temperature: 0.7,
-      };
-      break;
-
-    case 'openai':
-      headers['Authorization'] = `Bearer ${apiKey}`;
-      endpoint += 'chat/completions';
-      body = {
-        model: model,
-        messages: [
-          ...(system ? [{ role: 'system', content: system }] : []),
-          ...messages,
-        ],
-        max_tokens: 1000,
-        temperature: 0.7,
-      };
-      break;
-
     case 'anthropic':
       headers['x-api-key'] = apiKey;
       headers['anthropic-version'] = '2023-06-01';
-      endpoint = url.replace('/v1', '') + '/messages';
       body = {
         model: model,
         max_tokens: 1000,
@@ -476,10 +425,16 @@ async function callModelAPI(provider, config, messages, system) {
       break;
 
     default:
-      throw new Error(`不支持的模型提供商: ${provider}`);
+      headers['Authorization'] = `Bearer ${apiKey}`;
+      body = {
+        model: model,
+        messages: messagesWithSystem,
+        max_tokens: 1000,
+        temperature: 0.7,
+      };
   }
 
-  const response = await fetch(endpoint, {
+  const response = await fetch(fullUrl, {
     method: 'POST',
     headers,
     body: JSON.stringify(body),
@@ -487,12 +442,12 @@ async function callModelAPI(provider, config, messages, system) {
 
   if (!response.ok) {
     const errorText = await response.text().catch(() => '');
-    const errorData = JSON.parse(errorText || '{}');
-    throw new Error(
-      errorData.error?.message ||
-      errorData.message ||
-      `API请求失败 [${response.status} ${response.statusText}]: ${errorText.slice(0, 200)}`
-    );
+    let errorMsg = `API请求失败 [${response.status} ${response.statusText}]`;
+    try {
+      const errorData = JSON.parse(errorText || '{}');
+      errorMsg = errorData.error?.message || errorData.message || errorMsg + ': ' + errorText.slice(0, 200);
+    } catch {}
+    throw new Error(errorMsg);
   }
 
   const data = await response.json();
