@@ -32,6 +32,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Remove old android folder
+        run: rm -rf android
+
       - name: Add Android platform
         run: npx cap add android
 
